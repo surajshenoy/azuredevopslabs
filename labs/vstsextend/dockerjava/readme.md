@@ -54,7 +54,7 @@ In this task, you will configure a CI pipeline that will build and push the imag
 
     | Parameter | Value | Notes |
     | --------------- | ---------------------------- | ----------------------------------------------------------- |
-    | Options | `-DskipITs --settings ./maven/settings.xml` | Skips integration tests during the build |
+    | Options | `-Dmaven.test.skip=true` | Skips integration tests during the build |
     |Code Coverage Tool | JaCoCo | Selects JaCoCo as the coverage tool |
     | Source Files Directory | `src/main` | Sets the source files directory for JaCoCo |
 
@@ -98,7 +98,7 @@ In this task, you will configure a CI pipeline that will build and push the imag
 
       ![Maven task settings](images/dockerpublishtask.png)
 
-1. Click the **Save and Queue** button to save and queue this build. Make sure you choose **Azure Pipelines** in Agent pool and Agent Specification should be **ubuntu-18.04**
+1. Click the **Save and Queue** button to save and queue this build. Make sure you choose **Azure Pipelines** in Agent pool and Agent Specification should be **ubuntu-latest**
 
 1. Wait for the build to complete. When it is successful, you can go to your Azure portal and verify if the images were pushed successfully. 
     ![images/Azure Container Registry Images](images/portal-acrrepo2.png)
